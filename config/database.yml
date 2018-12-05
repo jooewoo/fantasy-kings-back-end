@@ -1,4 +1,4 @@
-<% project_name = 'NBA Stats' %>
+<% project_name = 'NBA_Stats' %>
 
 default: &default
   adapter: postgresql
