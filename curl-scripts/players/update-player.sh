@@ -1,5 +1,5 @@
 #!/bin/bash
-# BAhJIiUwZmQ3YzRiMTAyODYwMTBkMzM2ZGQ0ODI3MDhkZDNkNgY6BkVG--684e137089e2655e1e96d944422a506f4ae3f965
+# BAhJIiU4ODliNWMwNjkzYjU2NzViZTMwYjk5ZGUwOGJiMTUwNQY6BkVG--d3a7e97375c18afa55b19a8ffbe0564dba7d0adc
 
 curl "http://localhost:4741/players/${ID}" \
   --include \
