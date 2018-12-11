@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'csv'
-require 'pry'
 
 csv_text = File.read(Rails.root.join('db', 'nba-stats-17-18.csv'))
 
