@@ -1,37 +1,43 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database
-# with its default values.
-# The data can then be loaded with the rails db:seed (or created alongside the
-# db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
+require 'pry'
 
-# CSV.open('nba-stats-17-18.csv') do |row|
-#   puts row
-# end
-# players = []
+csv_text = File.read(Rails.root.join('db', 'nba-stats-17-18.csv'))
 
-# CSV.foreach('nba-stats-17-18.csv') do |row|
-#   p row
-# end
-
-arr_of_arrs = CSV.read('./nba-stats-17-18.csv')
-p arr_of_arrs
-# CSV.open('nba-stats-17-18.csv', :headers => true) do |csv|
-#   CSV.foreach('Old.csv',
-#     :write_headers => true,
-#     :headers => ['Rank', 'Player', 'Pos', 'Age', 'Team', 'GP', 'GS', 'MP',
-#                  'FG', 'FGA', 'FG%', '3P', '3PA', '3P%', '2P', '2PA', '2P%', 'eFG%', 'FT', 'FTA', 'FT%', 'ORB', 'DRB', 'TRB',
-#                   'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
-#   ) do |row|
-#     player['article_category_id'] = player['article_category_id']
-#     csv << row
-#   end
-# end
-
-# p players
+csv = CSV.parse(csv_text, headers: true, :col_sep => ',', row_sep: :auto)
+csv.map(&:to_hash)[0..540].each do |row|
+  stats = {
+    rank: row['Rank'].to_i,
+    player: row['Player'],
+    position: row['Position'],
+    age: row['Age'].to_i,
+    team: row['Team'],
+    games_played: row['Games_Played'].to_i,
+    games_started: row['Games_Started'].to_i,
+    minutes: row['Minutes'].to_i,
+    fg: row['FG'].to_i,
+    fga: row['FGA'].to_i,
+    fg_percentage: row['FG_Percentage'].to_f,
+    three_pointers: row['Three_Pointers'].to_i,
+    three_point_attempts: row['Three_Point_Attempts'].to_i,
+    three_point_percentage: row['Three_Point_Percentage'].to_f,
+    two_pointers: row['Two_Pointers'].to_i,
+    two_point_attempts: row['Two_Point_Attempts'].to_i,
+    two_point_percentage: row['Two_Point_Percentage'].to_f,
+    eFG: row['eFG'].to_f,
+    ft: row['FT'].to_i,
+    fta: row['FTA'].to_i,
+    ftp: row['FT_Percentage'].to_f,
+    orb: row['ORB'].to_i,
+    drb: row['DRB'].to_i,
+    trb: row['TRB'].to_i,
+    ast: row['AST'].to_i,
+    stl: row['STL'].to_i,
+    blk: row['BLK'].to_i,
+    tov: row['TOV'].to_i,
+    pf: row['PF'].to_i,
+    points: row['POINTS'].to_i
+  }
+  Stat.create(stats)
+end

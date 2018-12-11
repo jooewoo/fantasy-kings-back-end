@@ -1,4 +1,4 @@
-Rank,Player,Pos,Age,Team,GP,GS,MP,FG,FGA,FG%,3P,3PA,3P%,2P,2PA,2P%,eFG%,FT,FTA,FT%,ORB,DRB,TRB,AST,STL,BLK,TOV,PF,PTS
+Rank,Player,Position,Age,Team,Games_Played,Games_Started,Minutes,FG,FGA,FG_Percentage,Three_Pointers,Three_Point_Attempts,Three_Point_Percentage,Two_Pointers,Two_Point_Attempts,Two_Point_Percentage,eFG,FT,FTA,FT_Percentage,ORB,DRB,TRB,AST,STL,BLK,TOV,PF,POINTS
 1,LeBron James\jamesle01,PF,33,CLE,82,82,3026,857,1580,.542,149,406,.367,708,1174,.603,.590,388,531,.731,97,612,709,747,116,71,347,136,2251
 2,James Harden\hardeja01,SG,28,HOU,72,72,2551,651,1449,.449,265,722,.367,386,727,.531,.541,624,727,.858,41,348,389,630,126,50,315,169,2191
 3,Anthony Davis\davisan02,PF,24,NOP,75,75,2727,780,1462,.534,55,162,.340,725,1300,.558,.552,495,598,.828,187,645,832,174,115,193,162,159,2110
