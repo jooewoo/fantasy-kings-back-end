@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_190447) do
+ActiveRecord::Schema.define(version: 2018_12_11_160128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,50 @@ ActiveRecord::Schema.define(version: 2018_12_06_190447) do
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
+  create_table "stats", force: :cascade do |t|
+    t.integer "rank"
+    t.string "player"
+    t.string "position"
+    t.integer "age"
+    t.string "team"
+    t.integer "games_played"
+    t.integer "games_started"
+    t.integer "minutes"
+    t.integer "fg"
+    t.integer "fga"
+    t.float "fg_percentage"
+    t.integer "three_pointers"
+    t.integer "three_point_attempts"
+    t.float "three_point_percentage"
+    t.integer "two_pointers"
+    t.integer "two_point_attempts"
+    t.float "two_point_percentage"
+    t.float "eFG"
+    t.integer "ft"
+    t.integer "fta"
+    t.float "ftp"
+    t.integer "orb"
+    t.integer "drb"
+    t.integer "trb"
+    t.integer "ast"
+    t.integer "stl"
+    t.integer "blk"
+    t.integer "tov"
+    t.integer "pf"
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.bigint "stat_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stat_id"], name: "index_teams_on_stat_id"
+    t.index ["user_id"], name: "index_teams_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "token", null: false
@@ -48,4 +92,6 @@ ActiveRecord::Schema.define(version: 2018_12_06_190447) do
 
   add_foreign_key "examples", "users"
   add_foreign_key "players", "users"
+  add_foreign_key "teams", "stats"
+  add_foreign_key "teams", "users"
 end
