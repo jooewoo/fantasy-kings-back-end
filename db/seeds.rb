@@ -9,7 +9,7 @@ csv = CSV.parse(csv_text, headers: true, :col_sep => ',', row_sep: :auto)
 csv.map(&:to_hash)[0..540].each do |row|
   stats = {
     rank: row['Rank'].to_i,
-    player: row['Player'],
+    player: row['Player'].split('\\')[0],
     position: row['Position'],
     age: row['Age'].to_i,
     team: row['Team'],
