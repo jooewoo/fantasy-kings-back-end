@@ -4,6 +4,13 @@
 curl "http://localhost:4741/teams/${ID}" \
   --include \
   --request DELETE \
-  --header "Authorization: Token token=${TOKEN}"
+  --header "Authorization: Token token=${TOKEN}" \
+  --data '{
+    "team": {
+      "user_id": "'"${USERID}"'",
+      "stat_id": "'"${STATSID}"'"
+    }
+  }'
+
 
 echo

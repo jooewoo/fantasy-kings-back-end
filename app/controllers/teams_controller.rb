@@ -1,9 +1,9 @@
-class TeamsController < ApplicationController
+class TeamsController < ProtectedController
   before_action :set_team, only: [:show, :update, :destroy]
 
   # GET /teams
   def index
-    @teams = Team.all
+    @teams = current_user.teams
 
     render json: @teams
   end
@@ -15,7 +15,7 @@ class TeamsController < ApplicationController
 
   # POST /teams
   def create
-    @team = Team.new(team_params)
+    @team = current_user.teams.new(team_params)
 
     if @team.save
       render json: @team, status: :created, location: @team
@@ -41,7 +41,7 @@ class TeamsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team
-      @team = Team.find(params[:id])
+      @team = current_user.teams.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
