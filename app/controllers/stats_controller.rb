@@ -1,4 +1,4 @@
-class StatsController < ApplicationController
+class StatsController < OpenReadController
   before_action :set_stat, only: [:show, :update, :destroy]
 
   # GET /stats
@@ -10,12 +10,12 @@ class StatsController < ApplicationController
 
   # GET /stats/1
   def show
-    render json: Stat.find(params[:id]), include: ['user']
+    render json: @stat, include: ['user']
   end
 
   # POST /stats
   def create
-    @stat = Stat.new(stat_params)
+    @stat = current_user.stats.new(stat_params)
 
     if @stat.save
       render json: @stat, status: :created, location: @stat
