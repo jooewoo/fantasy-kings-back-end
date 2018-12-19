@@ -4,12 +4,12 @@
 The goal of this project was to set up an database for the 2017-2018 NBA season, and to provide a useful tool for fantasy players. This app is useful so that you can reflect your previous choices in previous years, and re-evaluate which players you would choose in which rounds.
 
 ## Installation Guide
-### Front End Installation(Current Repo)
+### Front End Installation(https://github.com/jooewoo/full-stack-front-end-client)
 1. Fork and clone this repository.
 2. Install dependencies with `npm install`.
 3. Run the development server with `grunt serve`.
 
-### Back End Installation (https://github.com/jooewoo/full-stack-back-end-client)
+### Back End Installation (Current Repo)
 1. Fork and clone this repository.
 2. Install dependencies with `bundle install.`
 3. Create a .env for sensitive settings (`touch .env`).
@@ -17,6 +17,8 @@ The goal of this project was to set up an database for the 2017-2018 NBA season,
 5. Store them in .env with keys `SECRET_KEY_BASE_<DEVELOPMENT|TEST>` respectively.
 6. Set up a Heroku server
 7. Set up your database with the following:
+  - `bin/rails db:reset`
+    or you can
   - `bin/rails db:drop` (if it already exists)
   - `bin/rails db:create`
   - `bin/rails db:migrate`
@@ -31,9 +33,9 @@ Before I began even coding, I decided to make my ERD diagrams, user stories, wha
 
 After the user stories, I decided to make a basic wireframe. Finally, I made a to do list to try and accomplish all the MVP by the four day deadline.
 
-
 ### ERD
-![ERD]('./public/final_erd.png')
+![ERD](./public/final_erd.png)
+
 ### User Stories
 * A user wants to create an account.
 * A user wants to sign in/ log out.
@@ -47,8 +49,7 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 * A user wants to be able to find a player by searching in a search bar.
 * A user wants to see more information about the player.
 
-## Wireframes/User Stories
-### User Stories
+## Wireframes
 
 ## API
 ### Authentication
@@ -86,6 +87,7 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 2. Add up to date NFL season, and previous NFL seasons
 3. Style and organize in an efficient manner.
 4. Want to style it for mobile as well.
+5. Want to be able to import your yahoo or espn team for fantasy basketball and football
 
 ## Links
 * [Front-end repo](https://github.com/jooewoo/full-stack-front-end-client)
@@ -102,10 +104,12 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 * Handlebars
 * AJAX
 * Jquery
+* PostgreSQL
+* Heroku
 * Ruby
 * Ruby on Rails
 
 ## Author
 Made by Joseph Woo
 ## Acknowledgments
-I want to thank [Basketball Reference](https://www.basketball-reference.com/) for providing a nice csv file that I could seed my data with.
+I want to thank [Basketball Reference](https://www.basketball-reference.com/) for providing a nice csv file that I could seed my database with.
