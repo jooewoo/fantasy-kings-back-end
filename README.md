@@ -49,7 +49,13 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 * A user wants to be able to find a player by searching in a search bar.
 * A user wants to see more information about the player.
 
-## Wireframes
+### Wireframes
+Sign Up/ Sign In
+![Wireframe](./public/project-2-wireframe.PNG)
+All Players
+![Wireframe](./public/project-2-wireframe-3.PNG)
+My Team
+![Wireframe](./public/project-2-wireframe-2.PNG)
 
 ## API
 ### Authentication
@@ -79,8 +85,6 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 | GET    |     `/stats/:id`        |      `stats#show`          |
 | PATCH  |     `/stats/:id`        |      `stats#update`        |
 | DELETE |     `/stats/:id`        |      `stats#destroy`       |
-
-### Wireframes
 
 ## Future Intentions
 1. I want to make an API that updates daily for the current season
