@@ -4,12 +4,12 @@
 The goal of this project was to set up an database for the 2017-2018 NBA season, and to provide a useful tool for fantasy players. This app is useful so that you can reflect your previous choices in previous years, and re-evaluate which players you would choose in which rounds.
 
 ## Installation Guide
-### Front End Installation(https://github.com/jooewoo/full-stack-front-end-client)
+### Front End Installation(Current Repo)
 1. Fork and clone this repository.
 2. Install dependencies with `npm install`.
 3. Run the development server with `grunt serve`.
 
-### Back End Installation (Current Repo)
+### Back End Installation (https://github.com/jooewoo/full-stack-back-end-client)
 1. Fork and clone this repository.
 2. Install dependencies with `bundle install.`
 3. Create a .env for sensitive settings (`touch .env`).
@@ -33,9 +33,9 @@ Before I began even coding, I decided to make my ERD diagrams, user stories, wha
 
 After the user stories, I decided to make a basic wireframe. Finally, I made a to do list to try and accomplish all the MVP by the four day deadline.
 
-### ERD
-![ERD](./public/final_erd.png)
 
+### ERD
+![ERD](./public/final-erd.png)
 ### User Stories
 * A user wants to create an account.
 * A user wants to sign in/ log out.
@@ -49,7 +49,7 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 * A user wants to be able to find a player by searching in a search bar.
 * A user wants to see more information about the player.
 
-### Wireframes
+## Wireframes
 Sign Up/ Sign In
 ![Wireframe](./public/project-2-wireframe.PNG)
 All Players
@@ -73,6 +73,7 @@ My Team
 
 | Verb   | URI Pattern              | Controller#Action   |
 |--------|--------------------------|---------------------|
+| POST   | `/teams`                 | `teams#create`      |
 | GET    | `/teams`                 | `teams#index`       |
 | DELETE | `/teams/:id`             | `teams#destroy`     |
 
@@ -86,12 +87,13 @@ My Team
 | PATCH  |     `/stats/:id`        |      `stats#update`        |
 | DELETE |     `/stats/:id`        |      `stats#destroy`       |
 
+### Wireframes
+
 ## Future Intentions
 1. I want to make an API that updates daily for the current season
 2. Add up to date NFL season, and previous NFL seasons
 3. Style and organize in an efficient manner.
 4. Want to style it for mobile as well.
-5. Want to be able to import your yahoo or espn team for fantasy basketball and football
 
 ## Links
 * [Front-end repo](https://github.com/jooewoo/full-stack-front-end-client)
@@ -108,12 +110,10 @@ My Team
 * Handlebars
 * AJAX
 * Jquery
-* PostgreSQL
-* Heroku
 * Ruby
 * Ruby on Rails
 
 ## Author
-Made by Joseph Woo
+Joseph Woo
 ## Acknowledgments
-I want to thank [Basketball Reference](https://www.basketball-reference.com/) for providing a nice csv file that I could seed my database with.
+I want to thank [Basketball Reference](https://www.basketball-reference.com/) for providing a nice csv file that I could seed my data with.
