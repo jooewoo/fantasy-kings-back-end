@@ -17,6 +17,8 @@ The goal of this project was to set up an database for the 2017-2018 NBA season,
 5. Store them in .env with keys `SECRET_KEY_BASE_<DEVELOPMENT|TEST>` respectively.
 6. Set up a Heroku server
 7. Set up your database with the following:
+  - `bin/rails db:reset`
+    or you can
   - `bin/rails db:drop` (if it already exists)
   - `bin/rails db:create`
   - `bin/rails db:migrate`
@@ -33,7 +35,7 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 
 
 ### ERD
-![ERD]('./public/final_erd.png')
+![ERD](./public/final-erd.png)
 ### User Stories
 * A user wants to create an account.
 * A user wants to sign in/ log out.
@@ -47,8 +49,13 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 * A user wants to be able to find a player by searching in a search bar.
 * A user wants to see more information about the player.
 
-## Wireframes/User Stories
-### User Stories
+## Wireframes
+Sign Up/ Sign In
+![Wireframe](./public/project-2-wireframe.PNG)
+All Players
+![Wireframe](./public/project-2-wireframe-3.PNG)
+My Team
+![Wireframe](./public/project-2-wireframe-2.PNG)
 
 ## API
 ### Authentication
@@ -66,6 +73,7 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 
 | Verb   | URI Pattern              | Controller#Action   |
 |--------|--------------------------|---------------------|
+| POST   | `/teams`                 | `teams#create`      |
 | GET    | `/teams`                 | `teams#index`       |
 | DELETE | `/teams/:id`             | `teams#destroy`     |
 
@@ -106,6 +114,6 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 * Ruby on Rails
 
 ## Author
-Made by Joseph Woo
+Joseph Woo
 ## Acknowledgments
 I want to thank [Basketball Reference](https://www.basketball-reference.com/) for providing a nice csv file that I could seed my data with.

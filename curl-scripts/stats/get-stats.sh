@@ -3,7 +3,7 @@
 curl "http://localhost:4741/stats/" \
   --include \
   --request GET \
-  --header "Authorization: Token token=${TOKEN}"
+  --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "stat": {
       "user_id": "'"${USER}"'"
