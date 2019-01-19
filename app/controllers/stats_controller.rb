@@ -5,12 +5,12 @@ class StatsController < OpenReadController
   def index
     @stats = Stat.all
 
-    render json: @stats, include: ['users']
+    render json: @stats, include: ['user']
   end
 
   # GET /stats/1
   def show
-    render json: @stat, include: ['users']
+    render json: @stat, include: ['user']
   end
 
   # POST /stats
